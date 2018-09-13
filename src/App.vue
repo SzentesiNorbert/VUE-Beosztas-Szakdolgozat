@@ -6,7 +6,7 @@
   <br>
   <hr>
 
-  <table class="table-bordered t1">
+  <table class="table-bordered t1 nevek">
   <tr>
     <th colspan="7">&nbsp
       <input type="text" v-model="nev1"
@@ -41,7 +41,7 @@
 
     <br>
     <br>
-    <table class="tabla1 table-bordered t1">
+    <table id="printarea" class="tabla1 table-bordered t1 teljes">
       <tr>
         <th colspan="7" id="table1">{{nev1}}</th>
 
@@ -85,7 +85,7 @@
 
     </table>
 
-    <table class="tabla2 table table-bordered t2">
+    <table class="tabla2 table table-bordered t2 koztes">
     <th colspan="7" id="table2">{{nev2}}</th>
 
       <tr>
@@ -127,7 +127,7 @@
 
 
     </table>
-    <table class="tabla3 table table-bordered t3">
+    <table class="tabla3 table table-bordered t3 koztes">
     <th colspan="7" id="table3">{{nev3}}</th>
       <tr>
         <th class="t3">#</th>
@@ -165,7 +165,7 @@
       </tr>
       </table>
 
-    <table class="tabla4 table table-bordered t4 dolgozo4">
+    <table class="tabla4 table table-bordered t4 koztes">
     <th colspan="7" id="table4">{{nev4}}</th>
       <tr>
         <th class="t4">#</th>
@@ -450,9 +450,25 @@
 </script>
 
 <style>
+@media print {
+   body *, #printarea * { zoom: 75% }
+   #main, #main #printarea, #main #printarea * { display:block; }
+}
+
 *{
   margin: 0;
   padding: 0;
+}
+
+.teljes {
+  margin-left: 4%;
+}
+.koztes {
+  margin-left: 2%;
+}
+
+.nevek {
+  margin-left: 15%;
 }
 
 .background{
@@ -460,6 +476,7 @@ background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 
 background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=0 ); /* IE6-9 */
+width: 100%
 }
 
 .tabla1{
@@ -488,7 +505,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', e
 
 
 .t1 {
-  border: 3px solid black;
+  border: 4px solid black;
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
@@ -505,7 +522,7 @@ h1 {
 .datum {
   text-align: center;
   background-color: black;
-  color: white;
+  color: transparent;
 }
 
 .ures {
@@ -548,7 +565,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content:" ";
@@ -558,7 +575,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: " ";
@@ -567,7 +584,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: " ";
@@ -576,7 +593,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: " ";
@@ -586,7 +603,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: " ";
@@ -595,7 +612,7 @@ width: 30px;
 .uresKorr + .clickKorr::before {
   width: content;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: " ";
@@ -657,7 +674,7 @@ width: 30px;
 }
 
 .t2 {
-  border: 3px solid green;
+  border: 4px solid green;
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
@@ -668,7 +685,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content:"";
@@ -678,7 +695,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -687,7 +704,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -696,7 +713,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -706,7 +723,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -715,7 +732,7 @@ width: 30px;
 .uresKorr_b + .clickKorr_b::before {
   width: content;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -775,7 +792,7 @@ width: 30px;
 
 
 .t3 {
-  border: 3px solid red;
+  border: 4px solid red;
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
@@ -786,7 +803,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content:"";
@@ -796,7 +813,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -806,7 +823,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -816,7 +833,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -826,7 +843,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -835,7 +852,7 @@ width: 30px;
 .uresKorr_c + .clickKorr_c::before {
   width: content;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -903,7 +920,7 @@ width: 30px;
 }
 
 .t4 {
-  border: 3px solid blue;
+  border: 4px solid blue;
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
@@ -914,7 +931,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content:"";
@@ -924,7 +941,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -934,7 +951,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -944,7 +961,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -954,7 +971,7 @@ width: 30px;
   width: content;
   height: 20px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -963,7 +980,7 @@ width: 30px;
 .uresKorr_d + .clickKorr_d::before {
   width: content;
   border-radius: 2px;
-  background: white;
+  background: transparent;
   position: relative;
   display: block;
   content: "";
@@ -986,7 +1003,11 @@ width: 30px;
 .ures_d:checked + .click_d::before {
   background: black;
 }
+.ssz {
 
+color: white;
+
+}
 /* Összesítés*/
 
 .sum1 {
