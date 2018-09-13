@@ -6,41 +6,39 @@
   <br>
   <hr>
 
-    <table class="table-bordered t1">
-    <tr>
-      <th colspan="7">&nbsp
-        <input type="text" v-model="nev1"
-               placeholder="1. Dolgozó neve"/>
-               </input>
-               &nbsp</th>
-               <td>&nbsp</td>
-               <th colspan="7">&nbsp
-                 <input type="text" v-model="nev2"
-                        placeholder="2. Dolgozó neve"/>&nbsp</th>
-                      </input>
-                        </th>
-                        <td>&nbsp</td>
-                        <th colspan="7">&nbsp
-                          <input type="text" v-model="nev3"
-                                 placeholder="3. Dolgozó neve"/>&nbsp</th>
-                                 <td>&nbsp</td>
-                                 </input>
-                                 </th>
-                                 <th colspan="7">&nbsp
-                                   <input type="text" v-model="nev4"
-                                          placeholder="4. Dolgozó neve"/>&nbsp</th>
-                                        </input>
-                                        <td>&nbsp</td>
-                                          </th>
-                                          <th colspan="7">&nbsp
-                                            <input type="month" min="2018-09" v-model="date"
-                                                   placeholder="Dátum">&nbsp</th>
-                                                 </input>
-                                                 <td>&nbsp</td>
-                                                   </th>
+  <table class="table-bordered t1">
+  <tr>
+    <th colspan="7">&nbsp
+      <input type="text" v-model="nev1"
+             placeholder="1. Dolgozó neve">
+             </input>
+             &nbsp</th>
+             <td>&nbsp</td>
+             <th colspan="7">&nbsp
+               <input type="text" v-model="nev2"
+                      placeholder="2. Dolgozó neve"/>&nbsp</th>
 
-    </tr>
-    </table>
+                      <td>&nbsp</td>
+                      <th colspan="7">&nbsp
+                        <input type="text" v-model="nev3"
+                               placeholder="3. Dolgozó neve"/>&nbsp</th>
+                               <td>&nbsp</td>
+
+                               <th colspan="7">&nbsp
+                                 <input type="text" v-model="nev4"
+                                        placeholder="4. Dolgozó neve"/>&nbsp</th>
+                                      <td>&nbsp</td>
+
+                                        <th colspan="7">&nbsp
+                                          <input type="month" min="2018-09" v-model="date"
+                                                 placeholder="Dátum"/>&nbsp</th>
+
+                                               <td>&nbsp</td>
+
+
+  </tr>
+  </table>
+
     <br>
     <br>
     <table class="tabla1 table-bordered t1">
@@ -103,27 +101,27 @@
 
 
 
-      <tr v-for="(sorb, k) in j">
+      <tr v-for="(sorb, l) in j">
         <td class="ssz t2 datum">
-          {{k+1}}
+          {{l+1}}
         </td>
         <td class="t2">
-          <input :name="'b'+k" type="radio" id="myInputM_b(k)" value="mn2" v-model="i[k].rg" class="ures_b"/><label class="click_b" for="myInputM_b(k)" value="11"></label>
+          <input :name="'b'+l" type="radio" id="myInputM_b(l)" value="mn2" v-model="j[l].rg" class="ures_b"/><label class="click_b" for="myInputM_b(l)" value="11"></label>
         </td>
         <td class="t2">
-          <input :name="'b'+k" type="radio" id="myInputP_b(k)" value="pn2" v-model="i[k].rg" class="uresP_b clickP_b"/><label class="clickP_b" for="myinputP_b(k)" value="0"></label>
+          <input :name="'b'+l" type="radio" id="myInputP_b(l)" value="pn2" v-model="j[l].rg" class="uresP_b clickP_b"/><label class="clickP_b" for="myinputP_b(l)" value="0"></label>
         </td>
         <td class="t2">
-          <input :name="'b'+k" type="radio" id="myInputPP_b(k)" value="pp2" v-model="i[k].rg" class="uresPP_b clickPP_b"/><label class="clickPP_b" for="myinputPP_b(k)" value="0"></label>
+          <input :name="'b'+l" type="radio" id="myInputPP_b(l)" value="pp2" v-model="j[l].rg" class="uresPP_b clickPP_b"/><label class="clickPP_b" for="myinputPP_b(l)" value="0"></label>
         </td>
         <td class="t2">
-          <input :name="'b'+k" type="radio" id="myInputSZ_b(k)" value="sz2" v-model="i[k].rg" class="uresSZ_b clickSZ_b"/><label class="clickSZ_b" for="myinputSZ_b(k)" value="8"></label>
+          <input :name="'b'+l" type="radio" id="myInputSZ_b(l)" value="sz2" v-model="j[l].rg" class="uresSZ_b clickSZ_b"/><label class="clickSZ_b" for="myinputSZ_b(l)" value="8"></label>
         </td>
         <td class="t2">
-          <input type="checkbox" id="myinputB_b(k)" v-model="i[k].b" class="uresB_b" value="b"/><label class="clickB_b" for="myinputB_b(k)" value="8"></label>
+          <input type="checkbox" id="myinputB_b(l)" v-model="i[l].b" class="uresB_b" value="b"/><label class="clickB_b" for="myinputB_b(l)" value="8"></label>
         </td>
         <td class="t2">
-          <input id="Korr_b(k)" class="uresKorr" type="number" min="-6" max="6" v-model="i[k].kn">
+          <input class="uresKorr_b" id="Korr_b(y)"  type="number" min="-6" max="6" v-model="j[l].ln"><label for="Korr_b(y)"></label>
         </td>
       </tr>
 
@@ -142,34 +140,31 @@
       </tr>
 
 
-
-
-      <tr v-for="(sorc, k) in l">
+      <tr v-for="(sorc, m) in l">
         <td class="ssz t3 datum">
-          {{k+1}}
+          {{m+1}}
         </td>
         <td class="t3">
-          <input :name="'c'+k" type="radio" id="myInputM_c" value="mn3" v-model="i[k].rg" class="ures_c"/><label class="click_c" for="myInputM_c" value="11"></label>
+          <input :name="'c'+m" type="radio" id="myInputM_c" value="mn3" v-model="l[m].rg" class="ures_c"/><label class="click_c" for="myInputM_c" value="11"></label>
         </td>
         <td class="t3">
-          <input :name="'c'+k" type="radio" id="myinputP_c" value="pn3" v-model="i[k].rg" class="uresP_c clickP_c"/><label class="clickP_c" for="myinputP_c" value="0"></label>
+          <input :name="'c'+m" type="radio" id="myinputP_c" value="pn3" v-model="l[m].rg" class="uresP_c clickP_c"/><label class="clickP_c" for="myinputP_c" value="0"></label>
         </td>
         <td class="t3">
-          <input :name="'c'+k" type="radio" id="myinputPP_c" value="pp3" v-model="i[k].rg" class="uresPP_c clickPP_c"/><label class="clickPP_c" for="myinputPP_c" value="0"></label>
+          <input :name="'c'+m" type="radio" id="myinputPP_c" value="pp3" v-model="l[m].rg" class="uresPP_c clickPP_c"/><label class="clickPP_c" for="myinputPP_c" value="0"></label>
         </td>
         <td class="t3">
-          <input :name="'c'+k" type="radio" id="myinputSZ_c" value="sz3" v-model="i[k].rg" class="uresSZ_c clickSZ_c"/><label class="clickSZ_c" for="myinputSZ_c" value="8"></label>
+          <input :name="'c'+m" type="radio" id="myinputSZ_c" value="sz3" v-model="l[m].rg" class="uresSZ_c clickSZ_c"/><label class="clickSZ_c" for="myinputSZ_c" value="8"></label>
         </td>
         <td class="t3">
-          <input type="checkbox" id="myinputB_c" v-model="i[k].c" class="uresB_c" value="b3"/><label class="clickB_c" for="myinputB_c" value="8"></label>
+          <input type="checkbox" id="myinputB_c" v-model="l[m].c" class="uresB_c" value="b3"/><label class="clickB_c" for="myinputB_c" value="8"></label>
         </td>
         <td class="t3">
-          <input class="uresKorr" type="number" min="-6" max="6" v-model="i[k].ko">
+          <input class="uresKorr_c" id="Korr_c(z)"  type="number" min="-6" max="6" v-model="l[m].mo"><label for="Korr_c(z)"></label>
         </td>
       </tr>
+      </table>
 
-
-    </table>
     <table class="tabla4 table table-bordered t4 dolgozo4">
     <th colspan="7" id="table4">{{nev4}}</th>
       <tr>
@@ -182,30 +177,27 @@
         <th class="t4">+/-</th>
       </tr>
 
-
-
-
-      <tr v-for="(sord, k) in i">
+      <tr v-for="(sord, n) in m">
         <td class="ssz t4 datum">
-          {{k+1}}
+          {{n+1}}
         </td>
         <td class="t4">
-          <input :name="'d'+k" type="radio" id="myInputM_d" value="mn4" v-model="i[k].rg" class="ures_d"/><label class="click_d" for="myInputM_d" value="11"></label>
+          <input :name="'d'+n" type="radio" id="myInputM_d" value="mn4" v-model="m[n].rg" class="ures_d"/><label class="click_d" for="myInputM_d" value="11"></label>
         </td>
         <td class="t4">
-          <input :name="'d'+k" type="radio" id="myinputP_d" value="pn4" v-model="i[k].rg" class="uresP_d clickP_d"/><label class="clickP_d" for="myinputP_d" value="0"></label>
+          <input :name="'d'+n" type="radio" id="myinputP_d" value="pn4" v-model="m[n].rg" class="uresP_d clickP_d"/><label class="clickP_d" for="myinputP_d" value="0"></label>
         </td>
         <td class="t4">
-          <input :name="'d'+k" type="radio" id="myInputPP_d" value="pp4" v-model="i[k].rg" class="uresPP_d clickPP_d"/><label class="clickPP_d" for="myInputPP_d" value="0"></label>
+          <input :name="'d'+n" type="radio" id="myInputPP_d" value="pp4" v-model="m[n].rg" class="uresPP_d clickPP_d"/><label class="clickPP_d" for="myInputPP_d" value="0"></label>
         </td>
         <td class="t4">
-          <input :name="'d'+k" type="radio" id="myinputSZ_d" value="sz4" v-model="i[k].rg" class="uresSZ_d clickSZ_d"/><label class="clickSZ_d" for="myinputSZ_d" value="8"></label>
+          <input :name="'d'+n" type="radio" id="myinputSZ_d" value="sz4" v-model="m[n].rg" class="uresSZ_d clickSZ_d"/><label class="clickSZ_d" for="myinputSZ_d" value="8"></label>
         </td>
         <td class="t4">
-          <input type="checkbox" id="myinputB_d" v-model="i[k].d" class="uresB_d" value="b4"/><label class="clickB_d" for="myinputB_d" value="8"></label>
+          <input type="checkbox" id="myinputB_d" v-model="m[n].d" class="uresB_d" value="b4"/><label class="clickB_d" for="myinputB_d" value="8"></label>
         </td>
         <td class="t4">
-          <input id="myInputKorr4" class="uresKorr_d" type="number" min="-6" max="6" v-model="i[k].kp"><label for="myInputKorr4"></label>
+          <input class="uresKorr_d" id="Korr_d(zz)"  type="number" min="-6" max="6" v-model="m[n].np"><label for="Korr_d(zz)"></label>
         </td>
       </tr>
 
@@ -302,18 +294,36 @@
             let ki_b = []
             let ki_c = []
             let ki_d = []
+
             Array(31)
                 .fill(0)
                 .forEach((v, k) => {
                     ki[k] = new Object()
                     ki[k].km = 0
-                    ki_b[k] = new Object()
-                    ki_b[k].kn = 0
-                    ki_c[k] = new Object()
-                    ki_c[k].ko = 0
-                    ki_d[k] = new Object()
-                    ki_d[k].kp = 0
-                })
+                    })
+
+            Array(31)
+                .fill(0)
+                .forEach((v, l) => {
+                    ki_b[l] = new Object()
+                    ki_b[l].km = 0
+                    })
+
+            Array(31)
+                .fill(0)
+                .forEach((v, m) => {
+                    ki_c[m] = new Object()
+                    ki_c[m].km = 0
+                    })
+
+            Array(31)
+                .fill(0)
+                .forEach((v, n) => {
+                    ki_d[n] = new Object()
+                    ki_d[n].km = 0
+                    })
+
+
             return {
                 i: ki,
                 j: ki_b,
@@ -360,78 +370,78 @@
 
             munkaora_b(y) {
                 let osszeg_b = 0
-                this.i
-                    .filter(v2 => Number(v2.kn))
-                    .forEach((v2, k2) => {
-                        osszeg_b += Number(v2.kn)
+                this.j
+                    .filter(v2 => Number(v2.ln))
+                    .forEach((v2, l) => {
+                        osszeg_b += Number(v2.ln)
                     })
-                return this.i
+                return this.j
                     .filter(v2 => v2.rg === "mn2")
-                    .reduce((v2, k2) => v2 += 11, 0) +
-                    this.i
+                    .reduce((v2, l) => v2 += 11, 0) +
+                    this.j
                     .filter(v2 => v2.rg === "sz2")
-                    .reduce((v2, k2) => v2 += 8, 0) +
+                    .reduce((v2, j) => v2 += 8, 0) +
                     osszeg_b
             },
             szabadsag_b(y) {
-                return this.i
+                return this.j
                     .filter(v2 => v2.rg === "sz2")
                     .length
             },
             ppsz_b(y) {
-                return this.i
+                return this.j
                     .filter(v2 => v2.rg === "pp2")
                     .length
             },
 
             munkaora_c(z) {
                 let osszeg_c = 0
-                this.i
-                    .filter(v => Number(v.ko))
-                    .forEach((v, k) => {
-                        osszeg_c += Number(v.ko)
+                this.l
+                    .filter(v => Number(v.mo))
+                    .forEach((v, m) => {
+                        osszeg_c += Number(v.mo)
                     })
-                return this.i
+                return this.l
                     .filter(v => v.rg === "mn3")
-                    .reduce((v, k) => v += 11, 0) +
-                    this.i
+                    .reduce((v, m) => v += 11, 0) +
+                    this.l
                     .filter(v => v.rg === "sz3")
-                    .reduce((v, k) => v += 8, 0) +
+                    .reduce((v, m) => v += 8, 0) +
                     osszeg_c
             },
             szabadsag_c(z) {
-                return this.i
+                return this.l
                     .filter(v => v.rg === "sz3")
                     .length
             },
             ppsz_c(z) {
-                return this.i
+                return this.l
                     .filter(v => v.rg === "pp3")
                     .length
             },
 
             munkaora_d(zz) {
                 let osszeg_d = 0
-                this.i
-                    .filter(v => Number(v.kp))
-                    .forEach((v, k) => {
-                        osszeg_d += Number(v.kp)
+                this.m
+                    .filter(v => Number(v.np))
+                    .forEach((v, n) => {
+                        osszeg_d += Number(v.np)
                     })
-                return this.i
+                return this.m
                     .filter(v => v.rg === "mn4")
-                    .reduce((v, k) => v += 11, 0) +
-                    this.i
+                    .reduce((v, n) => v += 11, 0) +
+                    this.m
                     .filter(v => v.rg === "sz4")
-                    .reduce((v, k) => v += 8, 0) +
+                    .reduce((v, n) => v += 8, 0) +
                     osszeg_d
             },
             szabadsag_d(zz) {
-                return this.i
+                return this.m
                     .filter(v => v.rg === "sz4")
                     .length
             },
             ppsz_d(zz) {
-                return this.i
+                return this.m
                     .filter(v => v.rg === "pp4")
                     .length
             }
