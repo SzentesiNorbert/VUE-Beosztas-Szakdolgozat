@@ -53,7 +53,7 @@
         <th class="t1">&nbsp P &nbsp</th>
         <th class="t1">&nbsp+P&nbsp</th>
         <th class="t1">&nbspSZ&nbsp</th>
-        <th class="t1">&nbspB&nbsp</th>
+        <th class="t1">&nbsp&nbspB&nbsp&nbsp</th>
         <th class="t1">+/-</th>
       </tr>
 
@@ -75,7 +75,7 @@
           <input :name="'a'+k" type="radio" id="myInputSZ('a'+k)" value="sz" v-model="i[k].rg" class="uresSZ clickSZ"/><label class="clickSZ" for="myInputSZ('a'+k)" value="8"></label>
         </td>
         <td class="t1">
-          <input type="checkbox" id="myInputB(x++)" v-model="i[k].a" class="uresB" value="a"/><label class="clickB" for="myInputB(x++)" value="8"></label>
+          <input :name="'a'+k" type="radio" id="myInputP('a'+k)" value="b" v-model="i[k].rg" class="uresB clickB"/><label class="clickB" for="myInputB('a'+k)" value="0"></label>
         </td>
         <td class="t1">
           <input class="uresKorr" id="Korr(x)" type="number" min="-6" max="6" v-model="i[k].km"><label for="Korr(x)"></label>
@@ -94,7 +94,7 @@
         <th class="t2">&nbsp P &nbsp</th>
         <th class="t2">&nbsp+P&nbsp</th>
         <th class="t2">&nbspSZ&nbsp</th>
-        <th class="t2">&nbspB&nbsp</th>
+        <th class="t2">&nbsp&nbspB&nbsp&nbsp</th>
         <th class="t2">+/-</th>
       </tr>
 
@@ -118,7 +118,7 @@
           <input :name="'b'+l" type="radio" id="myInputSZ_b(l)" value="sz2" v-model="j[l].rg" class="uresSZ_b clickSZ_b"/><label class="clickSZ_b" for="myinputSZ_b(l)" value="8"></label>
         </td>
         <td class="t2">
-          <input type="checkbox" id="myinputB_b(l)" v-model="i[l].b" class="uresB_b" value="b"/><label class="clickB_b" for="myinputB_b(l)" value="8"></label>
+          <input :name="'b'+l" type="radio" id="myInputP_b('b'+l)" value="b2" v-model="j[l].rg" class="uresB_b clickB_b"/><label class="clickB_b" for="myInputB_b('b'+l)" value="0"></label>
         </td>
         <td class="t2">
           <input class="uresKorr_b" id="Korr_b(y)"  type="number" min="-6" max="6" v-model="j[l].ln"><label for="Korr_b(y)"></label>
@@ -135,7 +135,7 @@
         <th class="t3">&nbsp P &nbsp</th>
         <th class="t3">&nbsp+P&nbsp</th>
         <th class="t3">&nbspSZ&nbsp</th>
-        <th class="t3">&nbspB&nbsp</th>
+        <th class="t3">&nbsp&nbspB&nbsp&nbsp</th>
         <th class="t3">+/-</th>
       </tr>
 
@@ -157,7 +157,7 @@
           <input :name="'c'+m" type="radio" id="myinputSZ_c" value="sz3" v-model="l[m].rg" class="uresSZ_c clickSZ_c"/><label class="clickSZ_c" for="myinputSZ_c" value="8"></label>
         </td>
         <td class="t3">
-          <input type="checkbox" id="myinputB_c" v-model="l[m].c" class="uresB_c" value="b3"/><label class="clickB_c" for="myinputB_c" value="8"></label>
+          <input :name="'c'+m" type="radio" id="myInputP_c('c'+m)" value="b3" v-model="l[m].rg" class="uresB_c clickB_c"/><label class="clickB_c" for="myInputB_c('c'+m)" value="0"></label>
         </td>
         <td class="t3">
           <input class="uresKorr_c" id="Korr_c(z)"  type="number" min="-6" max="6" v-model="l[m].mo"><label for="Korr_c(z)"></label>
@@ -173,7 +173,7 @@
         <th class="t4">&nbsp P &nbsp</th>
         <th class="t4">&nbsp+P&nbsp</th>
         <th class="t4">&nbspSZ&nbsp</th>
-        <th class="t4">&nbspB&nbsp</th>
+        <th class="t4">&nbsp&nbspB&nbsp&nbsp</th>
         <th class="t4">+/-</th>
       </tr>
 
@@ -194,7 +194,7 @@
           <input :name="'d'+n" type="radio" id="myinputSZ_d" value="sz4" v-model="m[n].rg" class="uresSZ_d clickSZ_d"/><label class="clickSZ_d" for="myinputSZ_d" value="8"></label>
         </td>
         <td class="t4">
-          <input type="checkbox" id="myinputB_d" v-model="m[n].d" class="uresB_d" value="b4"/><label class="clickB_d" for="myinputB_d" value="8"></label>
+          <input :name="'d'+n" type="radio" id="myInputP_d('d'+n)" value="b4" v-model="m[n].rg" class="uresB_d clickB_d"/><label class="clickB_d" for="myInputB_d('d'+n)" value="0"></label>
         </td>
         <td class="t4">
           <input class="uresKorr_d" id="Korr_d(zz)"  type="number" min="-6" max="6" v-model="m[n].np"><label for="Korr_d(zz)"></label>
@@ -208,71 +208,79 @@
     <div  class="sum1">
       <table border="1">
       <tr>
-        <td colspan=3 align="center" class="dolgozo1 t1">
+        <td colspan=4 align="center" class="dolgozo1 t1">
           {{date}}
         </td>
       </tr>
         <tr>
-          <td colspan=3 align="center" class="dolgozo1 t1">
+          <td colspan=4 align="center" class="dolgozo1 t1">
             {{nev1}}
           </td>
         </tr>
         <tr>
           <td>Munkaóra</td>
           <td>+P</td>
+          <td>B</td>
           <td>Szabadság</td>
         </tr>
         <tr>
           <td  v-html="munkaora" class="t1"></td>
           <td v-html="ppsz" class="t1"></td>
+          <td v-html="betegseg" class="t1"></td>
           <td v-html="szabadsag" class="t1"></td>
         </tr>
-        <td colspan=3  class="empty">&nbsp</td>
+        <td colspan=4  class="empty">&nbsp</td>
         <tr>
-          <td colspan=3 align="center" class="dolgozo2 t2">
+          <td colspan=4 align="center" class="dolgozo2 t2">
             {{nev2}}
           </td>
         </tr>
         <tr>
           <td>Munkaóra</td>
           <td>+P</td>
+          <td>B</td>
           <td>Szabadság</td>
         </tr>
         <tr>
           <td v-html="munkaora_b" class="t2"></td>
           <td v-html="ppsz_b" class="t2"></td>
+          <td v-html="betegseg_b" class="t2"></td>
           <td v-html="szabadsag_b" class="t2"></td>
         </tr>
-        <td colspan=3  class="empty">&nbsp</td>
+        <td colspan=4  class="empty">&nbsp</td>
         <tr>
-          <td colspan=3 align="center" class="dolgozo3 t3">
+          <td colspan=4 align="center" class="dolgozo3 t3">
             {{nev3}}
           </td>
         </tr>
         <tr>
           <td>Munkaóra</td>
           <td>+P</td>
+          <td>B</td>
           <td>Szabadság</td>
         </tr>
         <tr>
           <td v-html="munkaora_c" class="t3"></td>
           <td v-html="ppsz_c" class="t3"></td>
+          <td v-html="betegseg_c" class="t3"></td>
           <td v-html="szabadsag_c" class="t3"></td>
         </tr>
-        <td colspan=3  class="empty">&nbsp</td>
+        <td colspan=4  class="empty">&nbsp</td>
         <tr>
-          <td colspan=3 align="center" class="dolgozo4 t4">
+          <td colspan=4 align="center" class="dolgozo4 t4">
             {{nev4}}
           </td>
         </tr>
         <tr>
           <td>Munkaóra</td>
           <td>+P</td>
+          <td>B</td>
           <td>Szabadság</td>
         </tr>
         <tr>
           <td v-html="munkaora_d" class="t4"></td>
           <td v-html="ppsz_d" class="t4"></td>
+          <td v-html="betegseg_d" class="t4"></td>
           <td v-html="szabadsag_d" class="t4"></td>
         </tr>
 
@@ -353,9 +361,15 @@
                     .filter(v => v.rg === "mn")
                     .reduce((v, k) => v += 11, 0) +
                     this.i
+                    .filter(v => v.rg === "b")
+                    .reduce((v, k) => v += 0, 0) +
+                    this.i
                     .filter(v => v.rg === "sz")
                     .reduce((v, k) => v += 8, 0) +
                     osszeg
+
+
+
             },
             szabadsag(x) {
                 return this.i
@@ -365,6 +379,12 @@
             ppsz(x) {
                 return this.i
                     .filter(v => v.rg === "pp")
+                    .length
+            },
+
+            betegseg(x) {
+                return this.i
+                    .filter(v => v.rg === "b")
                     .length
             },
 
@@ -378,6 +398,9 @@
                 return this.j
                     .filter(v2 => v2.rg === "mn2")
                     .reduce((v2, l) => v2 += 11, 0) +
+                    this.j
+                    .filter(v2 => v2.rg === "b2")
+                    .reduce((v2, l) => v2 += 0, 0) +
                     this.j
                     .filter(v2 => v2.rg === "sz2")
                     .reduce((v2, j) => v2 += 8, 0) +
@@ -393,6 +416,11 @@
                     .filter(v2 => v2.rg === "pp2")
                     .length
             },
+            betegseg_b(y) {
+                return this.j
+                    .filter(v2 => v2.rg === "b2")
+                    .length
+            },
 
             munkaora_c(z) {
                 let osszeg_c = 0
@@ -404,6 +432,9 @@
                 return this.l
                     .filter(v => v.rg === "mn3")
                     .reduce((v, m) => v += 11, 0) +
+                    this.l
+                    .filter(v => v.rg === "b3")
+                    .reduce((v, m) => v += 0, 0) +
                     this.l
                     .filter(v => v.rg === "sz3")
                     .reduce((v, m) => v += 8, 0) +
@@ -419,6 +450,11 @@
                     .filter(v => v.rg === "pp3")
                     .length
             },
+            betegseg_c(z) {
+                return this.l
+                    .filter(v => v.rg === "b3")
+                    .length
+            },
 
             munkaora_d(zz) {
                 let osszeg_d = 0
@@ -430,6 +466,9 @@
                 return this.m
                     .filter(v => v.rg === "mn4")
                     .reduce((v, n) => v += 11, 0) +
+                    this.m
+                    .filter(v => v.rg === "b4")
+                    .reduce((v, m) => v += 0, 0) +
                     this.m
                     .filter(v => v.rg === "sz4")
                     .reduce((v, n) => v += 8, 0) +
@@ -444,7 +483,12 @@
                 return this.m
                     .filter(v => v.rg === "pp4")
                     .length
-            }
+            },
+            betegseg_d(zz) {
+                return this.m
+                    .filter(v => v.rg === "b4")
+                    .length
+            },
         }
     }
 </script>
@@ -454,11 +498,13 @@
    body *, #printarea * { zoom: 75% }
    #main, #main #printarea, #main #printarea * { display:block; }
 }
-
+#app {
+width: 100%;
+}
 *{
   margin: 0;
   padding: 0;
-}
+  }
 
 .teljes {
   margin-left: 4%;
@@ -1012,7 +1058,7 @@ color: white;
 
 .sum1 {
   border: 2px solid black;
-  width: 167px;
+  width: content;
   display: inline-block;
   position: absolute;
   margin-left: 20px;
