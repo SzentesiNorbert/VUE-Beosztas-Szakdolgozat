@@ -1,0 +1,8 @@
+{
+  "Betegség" : "int",
+  "Dátum" : "date",
+  "Munkaóra" : "int",
+  "Név" : "char",
+  "PluszP" : "int",
+  "Szabadság" : "int"
+}

@@ -9,31 +9,31 @@
   <table class="table-bordered t1 nevek">
   <tr>
     <th colspan="7">&nbsp
-      <input type="text" v-model="nev1"
+      <input id="dolgozo1" type="text" v-model="dolgozok.nev1"
              placeholder="1. Dolgozó neve">
              </input>
              &nbsp</th>
              <td>&nbsp</td>
              <th colspan="7">&nbsp
-               <input type="text" v-model="nev2"
+               <input id="dolgozo2" type="text" v-model="dolgozok.nev2"
                       placeholder="2. Dolgozó neve"/>&nbsp</th>
 
                       <td>&nbsp</td>
                       <th colspan="7">&nbsp
-                        <input type="text" v-model="nev3"
+                        <input id="dolgozo3" type="text" v-model="dolgozok.nev3"
                                placeholder="3. Dolgozó neve"/>&nbsp</th>
                                <td>&nbsp</td>
 
                                <th colspan="7">&nbsp
-                                 <input type="text" v-model="nev4"
+                                 <input id="dolgozo4" type="text" v-model="dolgozok.nev4"
                                         placeholder="4. Dolgozó neve"/>&nbsp</th>
                                       <td>&nbsp</td>
 
                                         <th colspan="7">&nbsp
-                                          <input type="month" min="2018-09" v-model="date"
+                                          <input id="datum" type="month" min="2018-09" v-model="dolgozok.date"
                                                  placeholder="Dátum"/>&nbsp</th>
 
-                                               <td>&nbsp</td>
+
 
 
   </tr>
@@ -43,7 +43,7 @@
     <br>
     <table id="printarea" class="tabla1 table-bordered t1 teljes">
       <tr>
-        <th colspan="7" id="table1">{{nev1}}</th>
+        <th colspan="7" id="table1">{{dolgozok.nev1}}</th>
 
       </tr>
 
@@ -86,7 +86,7 @@
     </table>
 
     <table class="tabla2 table table-bordered t2 koztes">
-    <th colspan="7" id="table2">{{nev2}}</th>
+    <th colspan="7" id="table2">{{dolgozok.nev2}}</th>
 
       <tr>
         <th class="t2">#</th>
@@ -128,7 +128,7 @@
 
     </table>
     <table class="tabla3 table table-bordered t3 koztes">
-    <th colspan="7" id="table3">{{nev3}}</th>
+    <th colspan="7" id="table3">{{dolgozok.nev3}}</th>
       <tr>
         <th class="t3">#</th>
         <th class="t3">MN</th>
@@ -166,7 +166,7 @@
       </table>
 
     <table class="tabla4 table table-bordered t4 koztes">
-    <th colspan="7" id="table4">{{nev4}}</th>
+    <th colspan="7" id="table4">{{dolgozok.nev4}}</th>
       <tr>
         <th class="t4">#</th>
         <th class="t4">MN</th>
@@ -205,16 +205,16 @@
     </table>
 
 
-    <div  class="sum1">
+    <div class="sum1">
       <table border="1">
       <tr>
         <td colspan=4 align="center" class="dolgozo1 t1">
-          {{date}}
+          {{dolgozok.date}}
         </td>
       </tr>
         <tr>
           <td colspan=4 align="center" class="dolgozo1 t1">
-            {{nev1}}
+            {{dolgozok.nev1}}
           </td>
         </tr>
         <tr>
@@ -224,15 +224,15 @@
           <td>Szabadság</td>
         </tr>
         <tr>
-          <td  v-html="munkaora" class="t1"></td>
-          <td v-html="ppsz" class="t1"></td>
-          <td v-html="betegseg" class="t1"></td>
-          <td v-html="szabadsag" class="t1"></td>
+          <td v-model.number="quantity" type="number" class="t1">{{munkaora}}</td>
+          <td class="t1">{{ppsz}}</td>
+          <td class="t1">{{betegseg}}</td>
+          <td class="t1">{{szabadsag}}</td>
         </tr>
         <td colspan=4  class="empty">&nbsp</td>
         <tr>
           <td colspan=4 align="center" class="dolgozo2 t2">
-            {{nev2}}
+            {{dolgozok.nev2}}
           </td>
         </tr>
         <tr>
@@ -242,15 +242,15 @@
           <td>Szabadság</td>
         </tr>
         <tr>
-          <td v-html="munkaora_b" class="t2"></td>
-          <td v-html="ppsz_b" class="t2"></td>
-          <td v-html="betegseg_b" class="t2"></td>
-          <td v-html="szabadsag_b" class="t2"></td>
+          <td class="t2">{{munkaora_b}}</td>
+          <td class="t2">{{ppsz_b}}</td>
+          <td class="t2">{{betegseg_b}}</td>
+          <td class="t2">{{szabadsag_b}}</td>
         </tr>
         <td colspan=4  class="empty">&nbsp</td>
         <tr>
           <td colspan=4 align="center" class="dolgozo3 t3">
-            {{nev3}}
+            {{dolgozok.nev3}}
           </td>
         </tr>
         <tr>
@@ -260,15 +260,15 @@
           <td>Szabadság</td>
         </tr>
         <tr>
-          <td v-html="munkaora_c" class="t3"></td>
-          <td v-html="ppsz_c" class="t3"></td>
-          <td v-html="betegseg_c" class="t3"></td>
-          <td v-html="szabadsag_c" class="t3"></td>
+          <td class="t3">{{munkaora_c}}</td>
+          <td class="t3">{{ppsz_c}}</td>
+          <td class="t3">{{betegseg_c}}</td>
+          <td class="t3">{{szabadsag_c}}</td>
         </tr>
         <td colspan=4  class="empty">&nbsp</td>
         <tr>
           <td colspan=4 align="center" class="dolgozo4 t4">
-            {{nev4}}
+            {{dolgozok.nev4}}
           </td>
         </tr>
         <tr>
@@ -278,15 +278,20 @@
           <td>Szabadság</td>
         </tr>
         <tr>
-          <td v-html="munkaora_d" class="t4"></td>
-          <td v-html="ppsz_d" class="t4"></td>
-          <td v-html="betegseg_d" class="t4"></td>
-          <td v-html="szabadsag_d" class="t4"></td>
+          <td class="t4">{{munkaora_d}}</td>
+          <td class="t4">{{ppsz_d}}</td>
+          <td class="t4">{{betegseg_d}}</td>
+          <td class="t4">{{szabadsag_d}}</td>
         </tr>
 
       </table>
-      <div class="print">
-        <button class="btn-primary" onclick="content.print()">Nyomtatás</button>
+
+      <button class="btn btn-primary" @click="submit">Mentés Adatbázisba</button><br>
+      <button class="btn btn-primary" @click="fetchData">Betöltés Adatbázisból</button>
+      <ul class="list-group">
+      <li class="list-group-item" v-for="l in lekerdez">{{l.date}}<br>{{l.nev1}}<br>{{l.nev2}}<br>{{l.nev3}}<br>{{l.nev4}}</li>
+      </ul>
+      <div id="id">
       </div>
     </div>
     </body>
@@ -336,19 +341,48 @@
                 i: ki,
                 j: ki_b,
                 l: ki_c,
-                m: ki_d
-            }
+                m: ki_d,
+
+                dolgozok: {
+                nev1: '',
+                nev2: '',
+                nev3: '',
+                nev4: '',
+                date: '',
+                munkaora: '',
+                },
+                lekerdez: []
+            };
         },
 
         methods: {
-            ujDolg() {
-                var nev = document.getElementById('nevi').value;
-                var tabla = document.getElementById('nev1')[0];
-                var dolgozo = table.insertRow(0);
-                var cell = dolgozo.insertCell(0);
-                cell.innerHTML = nev1;
-            }
+          submit() {
+              this.$http.post('https://beosztas-77cd9.firebaseio.com/beosztas.json', this.dolgozok)
+                      .then(response =>{
+                        console.log(response);
+          }, error=> {
+          console.log(error);
+          });
         },
+        fetchData(){
+          this.$http.get('https://beosztas-77cd9.firebaseio.com/beosztas.json')
+            .then(response => {
+            return response.json()
+          })
+          .then(dolgozok => {
+          const resultArray = [];
+          for (let key in dolgozok) {
+          resultArray.push(dolgozok[key]);
+          }
+          this.lekerdez=resultArray;
+          });
+        }
+        },
+
+
+
+
+
         computed: {
             munkaora(x) {
                 let osszeg = 0
@@ -507,7 +541,7 @@ width: 100%;
   }
 
 .teljes {
-  margin-left: 4%;
+  margin-left: 2%;
 }
 .koztes {
   margin-left: 2%;
@@ -551,7 +585,7 @@ width: 100%
 
 
 .t1 {
-  border: 4px solid black;
+  border: 3px solid black;
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
@@ -720,7 +754,7 @@ width: 30px;
 }
 
 .t2 {
-  border: 4px solid green;
+  border: 3px solid green;
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
@@ -838,7 +872,7 @@ width: 30px;
 
 
 .t3 {
-  border: 4px solid red;
+  border: 3px solid red;
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
@@ -966,7 +1000,7 @@ width: 30px;
 }
 
 .t4 {
-  border: 4px solid blue;
+  border: 3px solid blue;
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
@@ -1060,7 +1094,7 @@ color: white;
   border: 2px solid black;
   width: content;
   display: inline-block;
-  position: absolute;
+  position: fixed;
   margin-left: 20px;
   text-align: center;
 }

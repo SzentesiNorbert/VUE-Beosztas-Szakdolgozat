@@ -1,0 +1,21 @@
+{
+  "name": "beosztas",
+  "version": "1.0.0",
+  "description": "Beosztás táblázat",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "VUE-Beosztas-Szakdolgozat"
+  },
+  "author": "Szentesi Norbert",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
+  }
+}
