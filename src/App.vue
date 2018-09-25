@@ -287,11 +287,57 @@
       </table>
 
       <button class="btn btn-primary" @click="submit">Mentés Adatbázisba</button><br>
-      <button class="btn btn-primary" @click="fetchData">Betöltés Adatbázisból</button>
+      <button class="btn btn-primary" @click="fetchData" target="_blank">Betöltés Adatbázisból</button>
+        <div id="lekerdezes">
       <ul class="list-group">
-      <li class="list-group-item" v-for="l in lekerdez">{{l.date}}<br>{{l.nev1}}<br>{{l.nev2}}<br>{{l.nev3}}<br>{{l.nev4}}</li>
+      <li class="list-group-item" v-for="l in lekerdez">Dátum: {{l.date}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Név: {{l.nev1}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Munkaóra: {{l.munkaora}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Plusz P: {{l.pluszp}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Szabadság: {{l.szabadsag}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Betegség: {{l.betegseg}}</li>
       </ul>
-      <div id="id">
+
+
+      <ul class="list-group">
+      <li class="list-group-item" v-for="l in lekerdez">Név: {{l.nev2}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Munkaóra: {{l.munkaora_b}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Plusz P: {{l.pluszp_b}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Szabadság: {{l.szabadsag_b}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Betegség: {{l.betegseg_b}}</li>
+      </ul>
+      <ul class="list-group">
+      <li class="list-group-item" v-for="l in lekerdez">Név: {{l.nev3}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Munkaóra: {{l.munkaora_c}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Plusz P: {{l.pluszp_c}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Szabadság: {{l.szabadsag_c}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Betegség: {{l.betegseg_c}}</li>
+      </ul>
+      <ul class="list-group">
+      <li class="list-group-item" v-for="l in lekerdez">Név: {{l.nev4}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Munkaóra: {{l.munkaora_d}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Plusz P: {{l.pluszp_d}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Szabadság: {{l.szabadsag_d}}</li>
+      <br>
+      <li class="list-group-item" v-for="l in lekerdez">Betegség: {{l.betegseg_d}}</li>
+      </ul>
+
       </div>
     </div>
     </body>
@@ -348,8 +394,7 @@
                 nev2: '',
                 nev3: '',
                 nev4: '',
-                date: '',
-                munkaora: '',
+                date: ''
                 },
                 lekerdez: []
             };
@@ -357,7 +402,30 @@
 
         methods: {
           submit() {
-              this.$http.post('https://beosztas-77cd9.firebaseio.com/beosztas.json', this.dolgozok)
+          const dolgozok = {
+          nev1: this.dolgozok.nev1,
+          nev2: this.dolgozok.nev2,
+          nev3: this.dolgozok.nev3,
+          nev4: this.dolgozok.nev4,
+          date: this.dolgozok.date,
+          munkaora: this.munkaora,
+          munkaora_b: this.munkaora_b,
+          munkaora_c: this.munkaora_c,
+          munkaora_d: this.munkaora_d,
+          szabadsag: this.szabadsag,
+          szabadsag_b: this.szabadsag_b,
+          szabadsag_c: this.szabadsag_c,
+          szabadsag_d: this.szabadsag_d,
+          betegseg: this.betegseg,
+          betegseg_b: this.betegseg_b,
+          betegseg_c: this.betegseg_c,
+          betegseg_d: this.betegseg_d,
+          pluszp: this.ppsz,
+          pluszp_b: this.ppsz_b,
+          pluszp_c: this.ppsz_c,
+          pluszp_d: this.ppsz_d
+          }
+              this.$http.post('https://beosztas-77cd9.firebaseio.com/beosztas.json', dolgozok)
                       .then(response =>{
                         console.log(response);
           }, error=> {
@@ -1113,5 +1181,11 @@ color: white;
 .dolgozo4{
   border: 2px double blue;
 }
-
+ul{
+  border: 4px solid black;
+  text-align: left;
+  text-transform: uppercase;
+  list-style-type: none;
+  margin-right: 3px;
+}
 </style>
